@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo "Deployment successfull":-(
+                sh '5et5y6'
             }
         }
     }
