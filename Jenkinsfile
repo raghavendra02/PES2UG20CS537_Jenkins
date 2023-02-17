@@ -3,19 +3,24 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'g++ hello.cpp'
-                build job: 'PES2UG20CS537-1'
+                dir('main/') {
+                    sh 'g++ hello.cpp'
+                }
+                build job: 'PES2UG20CS525-1'
             }
         }
+
         stage('Test') {
             steps {
-                sh './a.out'
+               dir('main/') {
+                    sh 'g++ hello.cpp'
+                }
                 echo "Build stage successful"
             }
         }
         stage('Deploy') {
             steps {
-                echo "Deployment stage"
+                echo "Deployment successfull"
             }
         }
     }
